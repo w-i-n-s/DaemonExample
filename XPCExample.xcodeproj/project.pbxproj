@@ -10,7 +10,35 @@
 		2A58970A2AE02BC900BD64C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5897092AE02BC900BD64C4 /* AppDelegate.swift */; };
 		2A58970C2AE02BCA00BD64C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A58970B2AE02BCA00BD64C4 /* Assets.xcassets */; };
 		2A58970F2AE02BCA00BD64C4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A58970D2AE02BCA00BD64C4 /* MainMenu.xib */; };
+		2A58971D2AE02C2E00BD64C4 /* DaemonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58971C2AE02C2E00BD64C4 /* DaemonProtocol.swift */; };
+		2A58971F2AE02C2E00BD64C4 /* Daemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58971E2AE02C2E00BD64C4 /* Daemon.swift */; };
+		2A5897212AE02C2E00BD64C4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5897202AE02C2E00BD64C4 /* main.swift */; };
+		2A5897252AE02C2E00BD64C4 /* Daemon.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 2A58971A2AE02C2E00BD64C4 /* Daemon.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A5897232AE02C2E00BD64C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A5896FE2AE02BC900BD64C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A5897192AE02C2E00BD64C4;
+			remoteInfo = Daemon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A5897292AE02C2E00BD64C4 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				2A5897252AE02C2E00BD64C4 /* Daemon.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2A5897062AE02BC900BD64C4 /* XPCExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XPCExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -18,10 +46,22 @@
 		2A58970B2AE02BCA00BD64C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A58970E2AE02BCA00BD64C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2A5897102AE02BCA00BD64C4 /* XPCExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XPCExample.entitlements; sourceTree = "<group>"; };
+		2A58971A2AE02C2E00BD64C4 /* Daemon.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = Daemon.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A58971C2AE02C2E00BD64C4 /* DaemonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaemonProtocol.swift; sourceTree = "<group>"; };
+		2A58971E2AE02C2E00BD64C4 /* Daemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daemon.swift; sourceTree = "<group>"; };
+		2A5897202AE02C2E00BD64C4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2A5897222AE02C2E00BD64C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2A5897032AE02BC900BD64C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5897172AE02C2E00BD64C4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				2A5897082AE02BC900BD64C4 /* XPCExample */,
+				2A58971B2AE02C2E00BD64C4 /* Daemon */,
 				2A5897072AE02BC900BD64C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				2A5897062AE02BC900BD64C4 /* XPCExample.app */,
+				2A58971A2AE02C2E00BD64C4 /* Daemon.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +100,17 @@
 			path = XPCExample;
 			sourceTree = "<group>";
 		};
+		2A58971B2AE02C2E00BD64C4 /* Daemon */ = {
+			isa = PBXGroup;
+			children = (
+				2A58971C2AE02C2E00BD64C4 /* DaemonProtocol.swift */,
+				2A58971E2AE02C2E00BD64C4 /* Daemon.swift */,
+				2A5897202AE02C2E00BD64C4 /* main.swift */,
+				2A5897222AE02C2E00BD64C4 /* Info.plist */,
+			);
+			path = Daemon;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,15 +121,34 @@
 				2A5897022AE02BC900BD64C4 /* Sources */,
 				2A5897032AE02BC900BD64C4 /* Frameworks */,
 				2A5897042AE02BC900BD64C4 /* Resources */,
+				2A5897292AE02C2E00BD64C4 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2A5897242AE02C2E00BD64C4 /* PBXTargetDependency */,
 			);
 			name = XPCExample;
 			productName = XPCExample;
 			productReference = 2A5897062AE02BC900BD64C4 /* XPCExample.app */;
 			productType = "com.apple.product-type.application";
+		};
+		2A5897192AE02C2E00BD64C4 /* Daemon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A5897262AE02C2E00BD64C4 /* Build configuration list for PBXNativeTarget "Daemon" */;
+			buildPhases = (
+				2A5897162AE02C2E00BD64C4 /* Sources */,
+				2A5897172AE02C2E00BD64C4 /* Frameworks */,
+				2A5897182AE02C2E00BD64C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Daemon;
+			productName = Daemon;
+			productReference = 2A58971A2AE02C2E00BD64C4 /* Daemon.xpc */;
+			productType = "com.apple.product-type.xpc-service";
 		};
 /* End PBXNativeTarget section */
 
@@ -89,6 +161,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					2A5897052AE02BC900BD64C4 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					2A5897192AE02C2E00BD64C4 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -107,6 +182,7 @@
 			projectRoot = "";
 			targets = (
 				2A5897052AE02BC900BD64C4 /* XPCExample */,
+				2A5897192AE02C2E00BD64C4 /* Daemon */,
 			);
 		};
 /* End PBXProject section */
@@ -121,6 +197,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A5897182AE02C2E00BD64C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -132,7 +215,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A5897162AE02C2E00BD64C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A58971D2AE02C2E00BD64C4 /* DaemonProtocol.swift in Sources */,
+				2A58971F2AE02C2E00BD64C4 /* Daemon.swift in Sources */,
+				2A5897212AE02C2E00BD64C4 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A5897242AE02C2E00BD64C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A5897192AE02C2E00BD64C4 /* Daemon */;
+			targetProxy = 2A5897232AE02C2E00BD64C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2A58970D2AE02BCA00BD64C4 /* MainMenu.xib */ = {
@@ -262,6 +363,7 @@
 		2A5897142AE02BCA00BD64C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = XPCExample/XPCExample.entitlements;
@@ -289,6 +391,7 @@
 		2A5897152AE02BCA00BD64C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = XPCExample/XPCExample.entitlements;
@@ -313,6 +416,48 @@
 			};
 			name = Release;
 		};
+		2A5897272AE02C2E00BD64C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 924635PD62;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Daemon/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Daemon;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.perimeter81.Daemon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2A5897282AE02C2E00BD64C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 924635PD62;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Daemon/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Daemon;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.perimeter81.Daemon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -330,6 +475,15 @@
 			buildConfigurations = (
 				2A5897142AE02BCA00BD64C4 /* Debug */,
 				2A5897152AE02BCA00BD64C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A5897262AE02C2E00BD64C4 /* Build configuration list for PBXNativeTarget "Daemon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5897272AE02C2E00BD64C4 /* Debug */,
+				2A5897282AE02C2E00BD64C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
