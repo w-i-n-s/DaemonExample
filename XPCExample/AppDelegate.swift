@@ -14,7 +14,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        Sender.shared.sendPerformSome()
+        Sender.shared.sendAString(string: " -= Greetings! =-")
+
+        print("try not implemented, expect crush")
+        Sender.shared.sendPerformWithInt(value: 42)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -14,6 +14,8 @@
 		2A58971F2AE02C2E00BD64C4 /* Daemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58971E2AE02C2E00BD64C4 /* Daemon.swift */; };
 		2A5897212AE02C2E00BD64C4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5897202AE02C2E00BD64C4 /* main.swift */; };
 		2A5897252AE02C2E00BD64C4 /* Daemon.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 2A58971A2AE02C2E00BD64C4 /* Daemon.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A58972B2AE152AC00BD64C4 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58972A2AE152AC00BD64C4 /* Sender.swift */; };
+		2A58972C2AE152B000BD64C4 /* DaemonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58971C2AE02C2E00BD64C4 /* DaemonProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		2A58971E2AE02C2E00BD64C4 /* Daemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daemon.swift; sourceTree = "<group>"; };
 		2A5897202AE02C2E00BD64C4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2A5897222AE02C2E00BD64C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A58972A2AE152AC00BD64C4 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,7 @@
 				2A58970B2AE02BCA00BD64C4 /* Assets.xcassets */,
 				2A58970D2AE02BCA00BD64C4 /* MainMenu.xib */,
 				2A5897102AE02BCA00BD64C4 /* XPCExample.entitlements */,
+				2A58972A2AE152AC00BD64C4 /* Sender.swift */,
 			);
 			path = XPCExample;
 			sourceTree = "<group>";
@@ -211,6 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A58972B2AE152AC00BD64C4 /* Sender.swift in Sources */,
+				2A58972C2AE152B000BD64C4 /* DaemonProtocol.swift in Sources */,
 				2A58970A2AE02BC900BD64C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

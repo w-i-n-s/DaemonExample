@@ -7,12 +7,32 @@
 
 import Foundation
 
-/// This object implements the protocol which we have defined. It provides the actual behavior for the service. It is 'exported' by the service to make it available to the process hosting the service over an NSXPCConnection.
-class Daemon: NSObject, DaemonProtocol {
+// MARK: - Actually the Listener
+@objc
+class Daemon:
+    NSObject, // because of objc
+    DaemonProtocol {
     
-    /// This implements the example protocol. Replace the body of this class with the implementation of this service's protocol.
-    @objc func uppercase(string: String, with reply: @escaping (String) -> Void) {
-        let response = string.uppercased()
-        reply(response)
+    func performSome() {
+        print("Perform something on a listener side")
+    }
+    
+    func performWithString(string: String) {
+        print("Receive \(string) from sender")
+    }
+    
+    func performWithDict(dict: Dictionary<String, Any>) {
+        print("Receive \(dict.keys) and \(dict.values)")
+    }
+    
+    func performWith(string: String, flag: Bool, completion: @escaping (String) -> Void) {
+        completion("\(string) + \(flag ? "yes" : "no")")
+    }
+}
+
+// We have to avoid move parts of approach as much as we can
+extension Daemon {
+    func version(completion: @escaping (String) -> Void) {
+        completion("0.0.1")
     }
 }

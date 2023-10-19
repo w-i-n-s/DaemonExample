@@ -7,29 +7,62 @@
 
 import Foundation
 
-/// The protocol that this service will vend as its API. This protocol will also need to be visible to the process hosting the service.
-@objc protocol DaemonProtocol {
+@objc
+protocol Interaction_OneWay {
+    func performSome()
+}
+
+@objc
+protocol Interaction_OneWayWithParameter {
+    func performWithString(string: String)
     
-    /// Replace the API of this protocol with an API appropriate to the service you are vending.
-    func uppercase(string: String, with reply: @escaping (String) -> Void)
+    @objc optional
+    func performWithInt(value: Int)
+    
+    func performWithDict(dict: Dictionary<String, Any>)
+}
+
+// Can't return as a result of function because it's async
+// In case if we just need async with completion without any return
+// results then we should return dummy result like int/bool
+@objc
+protocol Interaction_WithCompletion {
+    func performWith(string: String, flag: Bool, completion: @escaping (String) -> Void)
+}
+
+// We can add whatever we actually want into reply's
+// struct instead of enum to avoid .rawValue
+struct ResultDictionaryKeys {
+    static let error = "ResultKeyError"
+    static let body = "ResultKeyBody"
+}
+
+@objc
+protocol Interaction_WithResult {
+    // As soon as protocol is objc then we can return only one result, so next is not available
+    // func performSomethingDifferent(value: Int, completion: @escaping (Result<String, Error>) -> Void)
+    
+    // Here we agree to use ResultDictionaryKeys to get all we need from listener
+    func performSomethingDifferent(value: Int, completion: @escaping (Dictionary<String, Any>) -> Void)
+}
+
+// MARK: - API
+
+/// The protocol that this service will vend as its API. This protocol will also need to be visible to the process hosting the service.
+@objc protocol DaemonProtocol: Interaction_OneWay, Interaction_OneWayWithParameter, Interaction_WithCompletion {
+    
+    // Here only API high level functions
+    func version(completion: @escaping (String) -> Void)
 }
 
 /*
- To use the service from an application or other process, use NSXPCConnection to establish a connection to the service by doing something like this:
-
-     let connectionToService = NSXPCConnection(serviceName: "com.perimeter81.Daemon")
-     connectionToService.remoteObjectInterface = NSXPCInterface(with: DaemonProtocol.self)
-     connectionToService.resume()
-
- Once you have a connection to the service, you can use it like this:
-
-     if let proxy = connectionToService.remoteObjectProxy as? DaemonProtocol {
-         proxy.uppercase(string: "hello") { aString in
-             NSLog("Result string was: \(aString)")
-         }
-     }
-
- And, when you are finished with the service, clean up the connection like this:
-
-     connectionToService.invalidate()
+// @objc can only be used with members of classes, @objc protocols, and concrete extensions of classes
+// So, POP isn't useful here
+extension DaemonProtocol {
+    
+    @objc
+    func version(completion: @escaping (String) -> Void) {
+        completion("0.0.1")
+    }
+}
 */
