@@ -25,18 +25,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         container.sendAString(string: " -= Greetings! =-")
         container.sendPerformWith(string: "True is", flag: true) { result in
             print("Received from demon: \(result)")
-             // fatalError()
         }
         
         print("stop >>")
         
+        /*
         print("try return result directly, expect crush")
         container.sendPerformWith(flag: false)
         
         print("try not implemented, expect crush")
         container.sendPerformWithInt(value: 42)
+        */
         
-//        self.container = nil
+        // Not directly invalidate
+        self.container = nil
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

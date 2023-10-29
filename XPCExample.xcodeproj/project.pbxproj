@@ -22,12 +22,8 @@
 		2A8E4CBE2AE965C80050D234 /* SenderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8E4CBD2AE965C80050D234 /* SenderError.swift */; };
 		2A8E4CC32AE968830050D234 /* DaemonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8E4CBF2AE9687D0050D234 /* DaemonProtocol.swift */; };
 		2A8E4CC42AE968830050D234 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8E4CC02AE9687D0050D234 /* Sender.swift */; };
-		2AE033A42AEE6B8800415E51 /* Isolation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4CAD2AE965640050D234 /* Isolation.framework */; };
-		2AE033A52AEE6B8800415E51 /* Isolation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4CAD2AE965640050D234 /* Isolation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AE033A92AEE6BB300415E51 /* XPCInteraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; };
 		2AE033AA2AEE6BB300415E51 /* XPCInteraction.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2AE033AD2AEE82B500415E51 /* XPCInteraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; };
-		2AE033AE2AEE82B500415E51 /* XPCInteraction.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AE033B12AEEA26200415E51 /* SenderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58972A2AE152AC00BD64C4 /* SenderContainer.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,21 +49,7 @@
 			remoteGlobalIDString = 2A8E4C702AE952850050D234;
 			remoteInfo = XPCInteraction;
 		};
-		2AE033A62AEE6B8800415E51 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A5896FE2AE02BC900BD64C4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2A8E4CAC2AE965640050D234;
-			remoteInfo = Isolation;
-		};
 		2AE033AB2AEE6BB300415E51 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A5896FE2AE02BC900BD64C4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2A8E4C702AE952850050D234;
-			remoteInfo = XPCInteraction;
-		};
-		2AE033AF2AEE82B500415E51 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A5896FE2AE02BC900BD64C4 /* Project object */;
 			proxyType = 1;
@@ -95,7 +77,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2A8E4CB42AE965640050D234 /* Isolation.framework in Embed Frameworks */,
-				2AE033AE2AEE82B500415E51 /* XPCInteraction.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,7 +98,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2AE033A52AEE6B8800415E51 /* Isolation.framework in Embed Frameworks */,
 				2AE033AA2AEE6BB300415E51 /* XPCInteraction.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -152,7 +132,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8E4CB32AE965640050D234 /* Isolation.framework in Frameworks */,
-				2AE033AD2AEE82B500415E51 /* XPCInteraction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +139,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AE033A42AEE6B8800415E51 /* Isolation.framework in Frameworks */,
 				2AE033A92AEE6BB300415E51 /* XPCInteraction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +270,6 @@
 			dependencies = (
 				2A8E4C832AE953050050D234 /* PBXTargetDependency */,
 				2A8E4CB22AE965640050D234 /* PBXTargetDependency */,
-				2AE033B02AEE82B500415E51 /* PBXTargetDependency */,
 			);
 			name = XPCExample;
 			packageProductDependencies = (
@@ -313,7 +290,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2AE033A72AEE6B8800415E51 /* PBXTargetDependency */,
 				2AE033AC2AEE6BB300415E51 /* PBXTargetDependency */,
 			);
 			name = Daemon;
@@ -497,20 +473,10 @@
 			target = 2A8E4C702AE952850050D234 /* XPCInteraction */;
 			targetProxy = 2A8E4CBA2AE965760050D234 /* PBXContainerItemProxy */;
 		};
-		2AE033A72AEE6B8800415E51 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2A8E4CAC2AE965640050D234 /* Isolation */;
-			targetProxy = 2AE033A62AEE6B8800415E51 /* PBXContainerItemProxy */;
-		};
 		2AE033AC2AEE6BB300415E51 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2A8E4C702AE952850050D234 /* XPCInteraction */;
 			targetProxy = 2AE033AB2AEE6BB300415E51 /* PBXContainerItemProxy */;
-		};
-		2AE033B02AEE82B500415E51 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2A8E4C702AE952850050D234 /* XPCInteraction */;
-			targetProxy = 2AE033AF2AEE82B500415E51 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
