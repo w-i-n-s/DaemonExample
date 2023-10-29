@@ -6,7 +6,7 @@
 //
 
 import Foundation
-//import DaemonInteraction
+import DaemonInteraction
 import XPCInteraction
 
 // MARK: - Actually the Listener

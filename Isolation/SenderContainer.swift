@@ -8,7 +8,7 @@
 import Foundation
 
 // SPM
-//import DaemonInteraction
+import DaemonInteraction
 
 // Frameworks
 import XPCInteraction

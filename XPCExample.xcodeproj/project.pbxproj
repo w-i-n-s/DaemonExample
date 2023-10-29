@@ -20,11 +20,11 @@
 		2A8E4CB82AE965760050D234 /* XPCInteraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; };
 		2A8E4CB92AE965760050D234 /* XPCInteraction.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2A8E4CBE2AE965C80050D234 /* SenderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8E4CBD2AE965C80050D234 /* SenderError.swift */; };
-		2A8E4CC32AE968830050D234 /* DaemonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8E4CBF2AE9687D0050D234 /* DaemonProtocol.swift */; };
-		2A8E4CC42AE968830050D234 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8E4CC02AE9687D0050D234 /* Sender.swift */; };
 		2AE033A92AEE6BB300415E51 /* XPCInteraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; };
 		2AE033AA2AEE6BB300415E51 /* XPCInteraction.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AE033B12AEEA26200415E51 /* SenderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58972A2AE152AC00BD64C4 /* SenderContainer.swift */; };
+		2AE033E32AEEC3FC00415E51 /* DaemonInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE033E22AEEC3FC00415E51 /* DaemonInteraction */; };
+		2AE033E52AEEC42F00415E51 /* DaemonInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE033E42AEEC42F00415E51 /* DaemonInteraction */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,8 +121,6 @@
 		2A8E4CAD2AE965640050D234 /* Isolation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Isolation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8E4CAF2AE965640050D234 /* Isolation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Isolation.h; sourceTree = "<group>"; };
 		2A8E4CBD2AE965C80050D234 /* SenderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderError.swift; sourceTree = "<group>"; };
-		2A8E4CBF2AE9687D0050D234 /* DaemonProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaemonProtocol.swift; path = XPCInteraction/DaemonProtocol.swift; sourceTree = SOURCE_ROOT; };
-		2A8E4CC02AE9687D0050D234 /* Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sender.swift; path = XPCInteraction/Sender.swift; sourceTree = SOURCE_ROOT; };
 		2AC401C42AE8108800B86F86 /* DaemonInteraction */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DaemonInteraction; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AE033A92AEE6BB300415E51 /* XPCInteraction.framework in Frameworks */,
+				2AE033E52AEEC42F00415E51 /* DaemonInteraction in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8E4CB82AE965760050D234 /* XPCInteraction.framework in Frameworks */,
+				2AE033E32AEEC3FC00415E51 /* DaemonInteraction in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,8 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				2A8E4C732AE952850050D234 /* XPCInteraction.h */,
-				2A8E4CBF2AE9687D0050D234 /* DaemonProtocol.swift */,
-				2A8E4CC02AE9687D0050D234 /* Sender.swift */,
 			);
 			path = XPCInteraction;
 			sourceTree = "<group>";
@@ -294,6 +292,7 @@
 			);
 			name = Daemon;
 			packageProductDependencies = (
+				2AE033E42AEEC42F00415E51 /* DaemonInteraction */,
 			);
 			productName = Daemon;
 			productReference = 2A58971A2AE02C2E00BD64C4 /* Daemon.xpc */;
@@ -333,6 +332,9 @@
 				2A8E4CBB2AE965760050D234 /* PBXTargetDependency */,
 			);
 			name = Isolation;
+			packageProductDependencies = (
+				2AE033E22AEEC3FC00415E51 /* DaemonInteraction */,
+			);
 			productName = Isolation;
 			productReference = 2A8E4CAD2AE965640050D234 /* Isolation.framework */;
 			productType = "com.apple.product-type.framework";
@@ -441,8 +443,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A8E4CC42AE968830050D234 /* Sender.swift in Sources */,
-				2A8E4CC32AE968830050D234 /* DaemonProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,6 +928,19 @@
 			relativePath = DaemonInteraction;
 		};
 /* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2AE033E22AEEC3FC00415E51 /* DaemonInteraction */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AC401C52AE810E500B86F86 /* XCLocalSwiftPackageReference "DaemonInteraction" */;
+			productName = DaemonInteraction;
+		};
+		2AE033E42AEEC42F00415E51 /* DaemonInteraction */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AC401C52AE810E500B86F86 /* XCLocalSwiftPackageReference "DaemonInteraction" */;
+			productName = DaemonInteraction;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A5896FE2AE02BC900BD64C4 /* Project object */;
 }
