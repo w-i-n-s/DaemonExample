@@ -7,12 +7,12 @@
 
 import Foundation
 
-@objc
+@objc public
 protocol Interaction_OneWay {
     func performSome()
 }
 
-@objc
+@objc public
 protocol Interaction_OneWayWithParameter {
     func performWithString(string: String)
     
@@ -25,19 +25,24 @@ protocol Interaction_OneWayWithParameter {
 // Can't return as a result of function because it's async
 // In case if we just need async with completion without any return
 // results then we should return dummy result like int/bool
-@objc
+@objc public
 protocol Interaction_WithCompletion {
     func performWith(string: String, flag: Bool, completion: @escaping (String) -> Void)
+    
+    // Origin of uncaught exception was raised.
+    // Return type of methods sent over this proxy must be 'void' or 'NSProgress *'
+    func performWith(flag: Bool) -> String
 }
 
 // We can add whatever we actually want into reply's
 // struct instead of enum to avoid .rawValue
+public
 struct ResultDictionaryKeys {
     static let error = "ResultKeyError"
     static let body = "ResultKeyBody"
 }
 
-@objc
+@objc public
 protocol Interaction_WithResult {
     // As soon as protocol is objc then we can return only one result, so next is not available
     // func performSomethingDifferent(value: Int, completion: @escaping (Result<String, Error>) -> Void)
@@ -49,7 +54,8 @@ protocol Interaction_WithResult {
 // MARK: - API
 
 /// The protocol that this service will vend as its API. This protocol will also need to be visible to the process hosting the service.
-@objc protocol DaemonProtocol: Interaction_OneWay, Interaction_OneWayWithParameter, Interaction_WithCompletion {
+@objc public
+protocol DaemonProtocol: Interaction_OneWay, Interaction_OneWayWithParameter, Interaction_WithCompletion {
     
     // Here only API high level functions
     func version(completion: @escaping (String) -> Void)
