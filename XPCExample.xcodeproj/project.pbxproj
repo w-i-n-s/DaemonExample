@@ -25,6 +25,7 @@
 		2AE033B12AEEA26200415E51 /* SenderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58972A2AE152AC00BD64C4 /* SenderContainer.swift */; };
 		2AE033E32AEEC3FC00415E51 /* DaemonInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE033E22AEEC3FC00415E51 /* DaemonInteraction */; };
 		2AE033E52AEEC42F00415E51 /* DaemonInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE033E42AEEC42F00415E51 /* DaemonInteraction */; };
+		2AE033EE2AEEEF8600415E51 /* SenderInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE033ED2AEEEF8600415E51 /* SenderInteraction */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		2A8E4CAF2AE965640050D234 /* Isolation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Isolation.h; sourceTree = "<group>"; };
 		2A8E4CBD2AE965C80050D234 /* SenderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderError.swift; sourceTree = "<group>"; };
 		2AC401C42AE8108800B86F86 /* DaemonInteraction */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DaemonInteraction; sourceTree = "<group>"; };
+		2AE033E72AEEC58000415E51 /* SenderInteraction */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SenderInteraction; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8E4CB32AE965640050D234 /* Isolation.framework in Frameworks */,
+				2AE033EE2AEEEF8600415E51 /* SenderInteraction in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +167,7 @@
 		2A5896FD2AE02BC900BD64C4 = {
 			isa = PBXGroup;
 			children = (
+				2AE033E72AEEC58000415E51 /* SenderInteraction */,
 				2AC401C42AE8108800B86F86 /* DaemonInteraction */,
 				2A5897082AE02BC900BD64C4 /* XPCExample */,
 				2A58971B2AE02C2E00BD64C4 /* Daemon */,
@@ -271,6 +275,7 @@
 			);
 			name = XPCExample;
 			packageProductDependencies = (
+				2AE033ED2AEEEF8600415E51 /* SenderInteraction */,
 			);
 			productName = XPCExample;
 			productReference = 2A5897062AE02BC900BD64C4 /* XPCExample.app */;
@@ -375,6 +380,7 @@
 			mainGroup = 2A5896FD2AE02BC900BD64C4;
 			packageReferences = (
 				2AC401C52AE810E500B86F86 /* XCLocalSwiftPackageReference "DaemonInteraction" */,
+				2AE033E82AEEC5F900415E51 /* XCLocalSwiftPackageReference "SenderInteraction" */,
 			);
 			productRefGroup = 2A5897072AE02BC900BD64C4 /* Products */;
 			projectDirPath = "";
@@ -927,6 +933,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = DaemonInteraction;
 		};
+		2AE033E82AEEC5F900415E51 /* XCLocalSwiftPackageReference "SenderInteraction" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = SenderInteraction;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -939,6 +949,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2AC401C52AE810E500B86F86 /* XCLocalSwiftPackageReference "DaemonInteraction" */;
 			productName = DaemonInteraction;
+		};
+		2AE033ED2AEEEF8600415E51 /* SenderInteraction */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SenderInteraction;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
