@@ -6,7 +6,7 @@
 //
 
 import Cocoa
-import Isolation
+import SenderInteraction
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {

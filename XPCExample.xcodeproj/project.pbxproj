@@ -15,14 +15,8 @@
 		2A8E4C742AE952850050D234 /* XPCInteraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A8E4C732AE952850050D234 /* XPCInteraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A8E4C812AE953050050D234 /* Daemon.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 2A58971A2AE02C2E00BD64C4 /* Daemon.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A8E4CB02AE965640050D234 /* Isolation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A8E4CAF2AE965640050D234 /* Isolation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A8E4CB32AE965640050D234 /* Isolation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4CAD2AE965640050D234 /* Isolation.framework */; };
-		2A8E4CB42AE965640050D234 /* Isolation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4CAD2AE965640050D234 /* Isolation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2A8E4CB82AE965760050D234 /* XPCInteraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; };
 		2A8E4CB92AE965760050D234 /* XPCInteraction.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2A8E4CBE2AE965C80050D234 /* SenderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8E4CBD2AE965C80050D234 /* SenderError.swift */; };
-		2AE033A92AEE6BB300415E51 /* XPCInteraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; };
-		2AE033AA2AEE6BB300415E51 /* XPCInteraction.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8E4C712AE952850050D234 /* XPCInteraction.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2AE033B12AEEA26200415E51 /* SenderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58972A2AE152AC00BD64C4 /* SenderContainer.swift */; };
 		2AE033E32AEEC3FC00415E51 /* DaemonInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE033E22AEEC3FC00415E51 /* DaemonInteraction */; };
 		2AE033E52AEEC42F00415E51 /* DaemonInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE033E42AEEC42F00415E51 /* DaemonInteraction */; };
 		2AE033EE2AEEEF8600415E51 /* SenderInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE033ED2AEEEF8600415E51 /* SenderInteraction */; };
@@ -36,21 +30,7 @@
 			remoteGlobalIDString = 2A5897192AE02C2E00BD64C4;
 			remoteInfo = Daemon;
 		};
-		2A8E4CB12AE965640050D234 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A5896FE2AE02BC900BD64C4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2A8E4CAC2AE965640050D234;
-			remoteInfo = Isolation;
-		};
 		2A8E4CBA2AE965760050D234 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A5896FE2AE02BC900BD64C4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2A8E4C702AE952850050D234;
-			remoteInfo = XPCInteraction;
-		};
-		2AE033AB2AEE6BB300415E51 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A5896FE2AE02BC900BD64C4 /* Project object */;
 			proxyType = 1;
@@ -71,17 +51,6 @@
 			name = "Embed XPC Services";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2A8E4C8F2AE953B20050D234 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2A8E4CB42AE965640050D234 /* Isolation.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2A8E4CBC2AE965760050D234 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,17 +58,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2A8E4CB92AE965760050D234 /* XPCInteraction.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2AE033A82AEE6B8800415E51 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2AE033AA2AEE6BB300415E51 /* XPCInteraction.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,12 +74,10 @@
 		2A58971E2AE02C2E00BD64C4 /* Daemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daemon.swift; sourceTree = "<group>"; };
 		2A5897202AE02C2E00BD64C4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2A5897222AE02C2E00BD64C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A58972A2AE152AC00BD64C4 /* SenderContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderContainer.swift; sourceTree = "<group>"; };
 		2A8E4C712AE952850050D234 /* XPCInteraction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XPCInteraction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8E4C732AE952850050D234 /* XPCInteraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCInteraction.h; sourceTree = "<group>"; };
 		2A8E4CAD2AE965640050D234 /* Isolation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Isolation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8E4CAF2AE965640050D234 /* Isolation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Isolation.h; sourceTree = "<group>"; };
-		2A8E4CBD2AE965C80050D234 /* SenderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderError.swift; sourceTree = "<group>"; };
 		2AC401C42AE8108800B86F86 /* DaemonInteraction */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DaemonInteraction; sourceTree = "<group>"; };
 		2AE033E72AEEC58000415E51 /* SenderInteraction */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SenderInteraction; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A8E4CB32AE965640050D234 /* Isolation.framework in Frameworks */,
 				2AE033EE2AEEEF8600415E51 /* SenderInteraction in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AE033A92AEE6BB300415E51 /* XPCInteraction.framework in Frameworks */,
 				2AE033E52AEEC42F00415E51 /* DaemonInteraction in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,8 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				2A8E4CAF2AE965640050D234 /* Isolation.h */,
-				2A8E4CBD2AE965C80050D234 /* SenderError.swift */,
-				2A58972A2AE152AC00BD64C4 /* SenderContainer.swift */,
 			);
 			path = Isolation;
 			sourceTree = "<group>";
@@ -265,13 +217,11 @@
 				2A5897032AE02BC900BD64C4 /* Frameworks */,
 				2A5897042AE02BC900BD64C4 /* Resources */,
 				2A8E4C842AE953050050D234 /* Embed XPC Services */,
-				2A8E4C8F2AE953B20050D234 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				2A8E4C832AE953050050D234 /* PBXTargetDependency */,
-				2A8E4CB22AE965640050D234 /* PBXTargetDependency */,
 			);
 			name = XPCExample;
 			packageProductDependencies = (
@@ -288,12 +238,10 @@
 				2A5897162AE02C2E00BD64C4 /* Sources */,
 				2A5897172AE02C2E00BD64C4 /* Frameworks */,
 				2A5897182AE02C2E00BD64C4 /* Resources */,
-				2AE033A82AEE6B8800415E51 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2AE033AC2AEE6BB300415E51 /* PBXTargetDependency */,
 			);
 			name = Daemon;
 			packageProductDependencies = (
@@ -456,8 +404,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A8E4CBE2AE965C80050D234 /* SenderError.swift in Sources */,
-				2AE033B12AEEA26200415E51 /* SenderContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,20 +415,10 @@
 			target = 2A5897192AE02C2E00BD64C4 /* Daemon */;
 			targetProxy = 2A8E4C822AE953050050D234 /* PBXContainerItemProxy */;
 		};
-		2A8E4CB22AE965640050D234 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2A8E4CAC2AE965640050D234 /* Isolation */;
-			targetProxy = 2A8E4CB12AE965640050D234 /* PBXContainerItemProxy */;
-		};
 		2A8E4CBB2AE965760050D234 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2A8E4C702AE952850050D234 /* XPCInteraction */;
 			targetProxy = 2A8E4CBA2AE965760050D234 /* PBXContainerItemProxy */;
-		};
-		2AE033AC2AEE6BB300415E51 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2A8E4C702AE952850050D234 /* XPCInteraction */;
-			targetProxy = 2AE033AB2AEE6BB300415E51 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

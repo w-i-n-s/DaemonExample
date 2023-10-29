@@ -11,7 +11,7 @@ import Foundation
 import DaemonInteraction
 
 // Frameworks
-import XPCInteraction
+//import XPCInteraction
 
 public final
 class SenderContainer {
