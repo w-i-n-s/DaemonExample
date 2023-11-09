@@ -29,7 +29,7 @@ extension SenderDelegateProtocol {
 // MARK: - Sender class
 
 open
-class Sender {//: SenderProtocol {
+class Sender {
     
     let connection: NSXPCConnection
     
@@ -37,9 +37,13 @@ class Sender {//: SenderProtocol {
     var delegate: SenderDelegateProtocol?
     
     private
-    init(connection: NSXPCConnection) {
+    /// Initialization of the Sender instance
+    /// - Parameters:
+    ///   - connection: connection instance
+    ///   - connectionProtocol: protocol which connection will use to interact with a listener
+    init(connection: NSXPCConnection, connectionProtocol: Protocol) {
         self.connection = connection
-        self.connection.remoteObjectInterface = NSXPCInterface(with: DaemonProtocol.self)
+        self.connection.remoteObjectInterface = NSXPCInterface(with: connectionProtocol.self)
         self.connection.interruptionHandler = {
             print("interruptionHandler")
         }
@@ -50,15 +54,41 @@ class Sender {//: SenderProtocol {
         
         self.connectionStart()
     }
-
+    
+    /// Initialization of the Sender instance with pre-defined DaemonProtocol
+    /// - Parameter serviceName: the service name for create connection
     public convenience
     init(serviceName: String) {
-        self.init(connection: NSXPCConnection(serviceName: serviceName))
+        self.init(connection: NSXPCConnection(serviceName: serviceName),
+                  connectionProtocol: DaemonProtocol.self)
     }
     
+    /// Initialization of the Sender instance with concrete Protocol
+    /// - Parameters:
+    ///   - serviceName: the service name for create connection
+    ///   - connectionProtocol: protocol which connection will use to interact with a listener
+    public convenience
+    init(serviceName: String, connectionProtocol: Protocol) {
+        self.init(connection: NSXPCConnection(serviceName: serviceName),
+                  connectionProtocol: connectionProtocol)
+    }
+    
+    /// Initialization of the Sender instance with pre-defined DaemonProtocol
+    /// - Parameter machServiceName: the match service name for create connection
     public convenience
     init(machServiceName: String) {
-        self.init(connection: NSXPCConnection(machServiceName: machServiceName))
+        self.init(connection: NSXPCConnection(machServiceName: machServiceName),
+                  connectionProtocol: DaemonProtocol.self)
+    }
+    
+    /// Initialization of the Sender instance with concrete Protocol
+    /// - Parameters:
+    ///   - machServiceName: the match service name for create connection
+    ///   - connectionProtocol: protocol which connection will use to interact with a listener
+    public convenience
+    init(machServiceName: String, connectionProtocol: Protocol) {
+        self.init(connection: NSXPCConnection(machServiceName: machServiceName),
+                  connectionProtocol: connectionProtocol)
     }
     
     public var proxy: Any? {
@@ -90,6 +120,4 @@ class Sender {//: SenderProtocol {
     deinit {
         connectionStop()
     }
-    
-    
 }
